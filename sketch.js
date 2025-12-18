@@ -11,13 +11,16 @@ let selectedMood = "";
 let flashTimer = 0;
 let sizes = [];
 let colors = [];
+let happySound, sadSound, anxiousSound, boredSound;
 
 function preload() {
 myFont = loadFont ('Fonts/myfont.ttf');
+
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight); //size of webart
+  createCanvas(windowWidth,windowHeight); 
+  //size of webart
   textFont(myFont);
 
 //Creates bubbles in bottom half//
@@ -43,12 +46,14 @@ function draw() {
 
   //Title//
   function drawTitle() {
-  let flicker = random(0.2, 1); //Makes text flicker//
+  let flicker = random(0.2, 1); 
+  //Makes text flicker//
   fill (168, 72, 50, flicker * 240);
   textSize (40);
   text("LAZURUS CAFE", 720, 100); 
   }
-  //trial and error to find the exact middle of the screen//
+  //trial and error to find the exact 
+  // middle of the screen//
 
 
   function drawQuestion() {
@@ -82,10 +87,19 @@ function draw() {
     //textAlign(CENTER);
     //text("Happy", x, y);
     
+    //x = x + dx;
+    //y = y + dy;
+    //if(x > width || x < 0) {
+    //dx = dx * -1;
+    //}
+    //Used this to originally make 1 bubble bounce 
+    // when it hits the border.
+    //Changed it after to make loops and arrays as 
+    // this was more efficient.
 
   stroke(168,72,50);
   strokeWeight(2);
-  ellipse(xs[i], ys[i], 150, 150);
+  ellipse(xs[i], ys[i], sizes[i], sizes[i]);
   
   noStroke();
   fill(255);
@@ -136,10 +150,12 @@ function mousePressed() {
       selectedMood = words[i];
       flashTimer = 15;
       console.log("Clicked mood:", selectedMood);
+      
     }
   }
 }
-//For the mousepressed funcntion watched different videos from youtubers such as The Coding Train & Peter Groth and applied this with past lessons//
+//For the mousepressed funcntion watched different videos from youtubers 
+// such as The Coding Train & Peter Groth and applied this with past lessons//
 //dist = distance
 
 function drawGlow (i) {
