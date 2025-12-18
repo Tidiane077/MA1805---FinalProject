@@ -151,6 +151,7 @@ function mousePressed() {
       flashTimer = 15;
       console.log("Clicked mood:", selectedMood);
       
+      
     }
   }
 }
